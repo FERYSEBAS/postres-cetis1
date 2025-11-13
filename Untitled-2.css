@@ -1,0 +1,171 @@
+/*RESETEO GLOBAL Y CONFIGURACIONES BASE */
+
+/* Aplica box-sizing a todos los elementos del documento,
+   haciendo que el padding y el border se incluyan en el tamaño total */
+   * {
+    box-sizing: border-box;
+  }
+  
+  /* Configuración general del cuerpo de la página:
+     - Fuente principal y de respaldo
+     - Eliminación de márgenes por defecto
+     - Colores de fondo y texto */
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+  /*ENCABEZADO (HEADER)*/
+  
+  /* Contenedor principal del encabezado:
+     - Flexbox para alinear logo y menú
+     - Espaciado y color de fondo */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  /* Enlaces del menú dentro del encabezado:
+     - Color blanco, sin subrayado y espaciado lateral */
+  menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+  }
+  
+  /* Efecto al pasar el cursor sobre los enlaces del menú:
+     - Cambio de color a amarillo */
+  .menu a:hover {
+    color: #ffcc00;
+  }
+  
+  /*SECCIÓN DE PRESENTACIÓN */
+  
+  /* Contenedor principal de la sección:
+     - Flexbox para centrar contenido e imagen
+     - Espaciado interno y fondo blanco */
+  .presentacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  
+  /* Imagen de perfil o avatar:
+     - Forma circular y tamaño fijo */
+  .presentacion img {
+    border-radius: 50%;
+    width: 50px;
+  }
+  
+  /* Contenedor del texto dentro de la presentación:
+     - Limita el ancho máximo del texto */
+  .presentacion .texto {
+    max-width: 400px;
+  }
+  
+  /* Botón principal dentro de la presentación:
+     - Color amarillo, sin borde, y con estilo de botón moderno */
+  .presentacion button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* Efecto hover del botón:
+     - Cambio de tono de amarillo */
+  .presentacion button:hover {
+    background-color: #ffaa00;
+  }
+  
+  /*SECCIÓN DE PROYECTOS*/
+  
+  /* Contenedor de todos los proyectos:
+     - Flexbox con ajuste automático (wrap)
+     - Espaciado entre elementos */
+  .proyectos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+  
+  /* Tarjeta individual de proyecto:
+     - Fondo blanco, sombra suave y bordes redondeados
+     - Transición suave al hacer hover */
+  .proyecto {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  /* Efecto al pasar el cursor sobre una tarjeta:
+     - Escala ligera para destacar el elemento */
+  .proyecto:hover {
+    transform: scale(1.05);
+  }
+  
+  /*PIE DE PÁGINA (FOOTER)*/
+  
+  /* Estilo del pie de página:
+     - Centrado de texto, colores oscuros y espaciado vertical */
+  .footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 15px 0;
+  }
+  
+  /* MEDIA QUERIES (DISEÑO RESPONSIVO)*/
+  
+  /* ----- Vista Tablet (pantallas menores a 768px) ----- */
+  @media (max-width: 768px) {
+  
+    /* La presentación pasa a columna para mejor lectura */
+    .presentacion {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    /* El encabezado se adapta en columna */
+    header {
+      flex-direction: column;
+    }
+  
+    /* Los enlaces del menú se separan visualmente */
+    .menu a {
+      display: inline-block;
+      margin: 10px;
+    }
+  }
+  
+  /* ----- Vista Móvil (pantallas menores a 480px) ----- */
+  @media (max-width: 480px) {
+  
+    /* Los proyectos se muestran en una sola columna centrada */
+    .proyectos {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Las tarjetas de proyecto ocupan casi todo el ancho disponible */
+    .proyecto {
+      width: 90%;
+    }
+  }
+  
